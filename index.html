@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>Resume | Contact form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		
+		<style>
+			/*KONTAKT*/
+
+			.group {
+				  width: 70%;
+				  position: relative;
+				  margin-bottom: 45px;
+				  display: block;
+				  float: left;
+			}
+			.group:nth-child(2) {
+			  margin-left: 30px;
+			}
+			.group:first-child {
+			  margin-left: 30px;
+			}
+			.group:nth-child(3)  {
+			  margin-left: 30px;
+			}
+			input {
+			  font-size: 18px;
+			  padding: 10px 10px 10px 2px;
+			  display: block;
+			  width: 100%;
+			  border: none;
+			  border-bottom: 2px solid #7d7d7d;
+			  background: transparent;
+			  color: #7d7d7d;
+			  font-weight: normal;
+			}
+			textarea {
+			  font-size: 18px;
+			  padding: 10px 10px 10px 2px;
+			  display: block;
+			  width: 70%;
+			  border: none;
+			  border-bottom: 2px solid white;
+			  background: rgb(250,80,80);
+			  color: white;
+			  font-weight: normal;
+			}
+			input:focus {
+			  outline: none;
+			}
+
+			/* LABEL ======================================= */
+			label {
+			  color: #7d7d7d;
+			  font-size: 1.5em;
+			  position: absolute;
+			  pointer-events: none;
+			  top: 10px;
+			  transition: 0.2s ease all;
+			  -moz-transition: 0.2s ease all;
+			  -webkit-transition: 0.2s ease all;
+			}
+
+			/* active state */
+			input:focus ~ label, input:valid ~ label {
+			  top: -15px;
+			  font-size: 1em;
+			  color: #efefef;
+			}
+
+			/* HIGHLIGHTER ================================== */
+			.highlight {
+			  position: absolute;
+			  height: 60%;
+			  width: 100px;
+			  top: 25%;
+			  left: 0;
+			  pointer-events: none;
+			  opacity: 0.5;
+			}
+
+			/* active state */
+			input:focus ~ .highlight {
+			  -webkit-animation: inputHighlighter 0.3s ease;
+			  animation: inputHighlighter 0.3s ease;
+			}
+
+			/* ANIMATIONS ================ */
+			@-webkit-keyframes inputHighlighter {
+			  from {
+				background: white;
+			  }
+			  to {
+				width: 0;
+				background: transparent;
+			  }
+			}
+			@keyframes inputHighlighter {
+			  from {
+				background: white;
+			  }
+			  to {
+				width: 0;
+				background: transparent;
+			  }
+			}
+			.form-cont {
+			  width: 100%;
+			  max-width: none;
+			  font-family: helvetica, arial;
+			  font-weight: 100;
+			}
+			.form-cont .form-block {
+			  width: 55%;
+			  margin: 60px auto;
+
+			  background: transparent;
+			  padding: 30px 30px;
+			}
+			.form-cont .form-block .group-cont {
+			  width: 100%;
+			  height: 90px;
+			}
+			.form-cont .form-block .form {
+				  height: auto;
+				overflow: hidden;
+			  margin: 0 auto;
+			  border: 2px solid #7d7d7d;
+			  padding: 30px 30px 30px 0;
+			}
+			.form-cont .form-block .form .vertical-text {
+			  -webkit-transform: rotate(270deg);
+			  transform: rotate(270deg);
+			  float: left;
+			  color: white;
+			  width: 10px;
+			  margin-top: 70px;
+			  margin-left: 13px;
+			  margin-right: 7px;
+			}
+			.form-cont .form-block .form .textarea {
+			  float: left;
+			  width: 100%;
+			  text-align: center;
+			}
+			.form-cont .form-block .form .textarea .button-2 {
+			  font-size: 1.5em;
+			  border: none;
+			  background: inherit;
+			  color: #7d7d7d;
+			  margin-top: 25px;
+			  outline: none;
+			  -webkit-transition: all .20s ease;
+			  transition: all .20s ease;
+			}
+			.form-cont .form-block .form .textarea .button-2:hover {
+			  color: #7d7d7d;
+			}
+
+			.textarea-scroll::-webkit-scrollbar-track {
+			  background-color: #F5F5F5;
+			}
+
+			.textarea-scroll::-webkit-scrollbar {
+			  width: 6px;
+			  background-color: #F5F5F5;
+			}
+
+			.textarea-scroll::-webkit-scrollbar-thumb {
+			  background-color: #00BAAF;
+			  border-left: 2px solid white;
+			}
+
+			@media screen and (max-width: 850px) {
+			  .form-cont,
+			  .form-block {
+				width: 96% !important;
+				margin: 30px auto !important;
+			  }
+			}
+			@media screen and (max-width: 750px) {
+			  .form {
+				height: 400px !important;
+			  }
+
+			  .form-cont,
+			  .form-block {
+					width: 80% !important;
+			  }
+
+			  .group {
+				width: calc(100% - 30px);
+			  }	
+
+			  textarea {
+				width: calc(100% - 30px) !important;
+			  }
+			}
+
+			/**/
+
+		</style>
+
+	</head>
+
+	<body>
+		
+		<div class="contact" id="contactid">
+			<section id="form" class="form-cont" >
+				<div class="form-block">
+					<h2 class="sectionh" style="color:#7d7d7d">CONTACT ME</h2>
+					<div class="form">
+						<form>
+							<div class="group-cont">
+								<div class="group">
+									<input type="text" name='ime' id='ime' class="name" autocomplete="off" autocapitalize="off" autocorrect="off"  required
+									  maxlength="30" >
+									<span class="highlight"></span>
+									<span class="bar"></span>
+									<label id="label-name">Name</label>
+								</div>
+								<div class="group">
+									  <input type="text" name='email' id='email' class="email" autocomplete="off"  autocapitalize="off" autocorrect="off"  required
+									  maxlength="30"  >
+									  <span class="highlight"></span>
+									  <span class="bar"></span>
+									  <label>Email</label>
+								</div>
+								<div class="group">
+									  <input type="text" name='poruka' id='poruka' class="name" autocomplete="off" autocapitalize="off" autocorrect="off"  required
+									  maxlength="30" >
+									  <span class="highlight"></span>
+									  <span class="bar"></span>
+									  <label id="label-name">Message</label>
+								</div>
+							</div>
+							<div class="textarea">
+							   <!--<div class="vertical-text">Message</div>
+							   <textarea name="message"  type="text" autocomplete="off" spellcheck="true" autocapitalize="off" autocorrect="off"  required
+							   class="textarea-scroll" id="textarea-message"></textarea>-->
+							   <button class="button-2"  onclick="return formamsg1()">Send.</button><br>
+								<div id="placefortable">
+								</div>
+								<br><br>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	
+	</body>
+
+
+</html>
